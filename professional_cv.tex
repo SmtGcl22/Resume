@@ -1,9 +1,9 @@
-\documentclass[10pt,a4paper]{article}
+\documentclass[9pt,a4paper]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[turkish,shorthands=off]{babel}
-\usepackage[left=1.2cm,right=1.2cm,top=0.9cm,bottom=0.9cm]{geometry}
+\usepackage[left=0cm,right=0cm,top=0cm,bottom=0cm]{geometry}
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{tikz}
@@ -11,151 +11,178 @@
 \usepackage{hyperref}
 \usepackage[sfdefault]{roboto}
 \usepackage{fontawesome5}
+\usepackage{enumitem}
+\usepackage{setspace}
 
-\newcommand{\cyberbullet}{\textcolor{cyberblue}{\scriptsize\faSquare}}
-
-\definecolor{cyberblue}{RGB}{0, 102, 204}
-\definecolor{darkcyber}{RGB}{15, 25, 45}
-\definecolor{slategray}{RGB}{112, 128, 144}
-\definecolor{dividergray}{RGB}{210, 215, 220}
+% ─── Renkler (koyu lacivert / slate – profesyonel) ───────────────
+\definecolor{sidebar}{RGB}{25,42,68}
+\definecolor{sideaccent}{RGB}{100,180,220}
+\definecolor{sidetext}{RGB}{210,220,235}
+\definecolor{maintext}{RGB}{38,38,48}
+\definecolor{accentblue}{RGB}{25,80,140}
+\definecolor{lightgray}{RGB}{120,130,145}
+\definecolor{rulecolor}{RGB}{25,80,140}
+\definecolor{catcolor}{RGB}{160,200,230}
 
 \hypersetup{
     colorlinks=true,
-    linkcolor=cyberblue,
-    filecolor=cyberblue,
-    urlcolor=cyberblue,
+    linkcolor=sideaccent,
+    filecolor=sideaccent,
+    urlcolor=sideaccent,
 }
 
-\titleformat{\section}{\large\bfseries\color{darkcyber}}{}{0em}{}[\vspace{-0.4ex}\color{cyberblue}\rule{\linewidth}{1.5pt}]
-\titlespacing*{\section}{0pt}{1.3ex}{1ex}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
 
-\newcommand{\leftsection}[1]{
-    \vspace{2ex}
-    {\large\bfseries\color{darkcyber} #1} \par
-    \vspace{-0.8ex}
-    {\color{cyberblue}\rule{\linewidth}{1.5pt}} \par
-    \vspace{0.8ex}
+% ─── Sol panel section komutu ───────────────────────────
+\newcommand{\sidesection}[2]{%
+    \vspace{2.2ex}%
+    {\large\bfseries\color{white} #1\ \ #2}\par%
+    \vspace{0.5ex}%
+    {\color{sideaccent}\rule{\linewidth}{1.2pt}}\par%
+    \vspace{1ex}%
+}
+
+% ─── Sol panel kategori komutu ──────────────────────────
+\newcommand{\skillcat}[1]{%
+    \vspace{0.6ex}%
+    {\small\bfseries\color{catcolor}#1}\par%
+    \vspace{0.2ex}%
+}
+
+% ─── Sağ panel section komutu ───────────────────────────
+\newcommand{\mainsection}[2]{%
+    \vspace{1.6ex}%
+    {\Large\bfseries\color{accentblue} #1\ \ #2}\par%
+    \vspace{0.4ex}%
+    {\color{rulecolor}\rule{\linewidth}{1.5pt}}\par%
+    \vspace{1ex}%
 }
 
 \begin{document}
-\pagestyle{empty}
 
 \noindent
-\begin{minipage}[t]{0.33\textwidth}
+\enlargethispage{10pt}
+% ─── SOL PANEL ──────────────────────────────────────────
+\begin{tikzpicture}[remember picture, overlay]
+    \fill[sidebar] (current page.north west) rectangle ([xshift=6.9cm]current page.south west);
+\end{tikzpicture}%
+%
+\begin{minipage}[t][\paperheight]{6.4cm}
     \vspace{0pt}
-    \raggedright
-    
-    \begin{center}
-        \begin{tikzpicture}
-            \clip (0,0) circle (2.2cm);
-            \node at (0,0) {\includegraphics[width=4.5cm, height=4.5cm]{profile.jpg}}; 
-        \end{tikzpicture}
-        
-        \vspace{1.2ex}
-        {\LARGE \bfseries \color{darkcyber} Samet Güçlü} \\[1ex]
-        {\large \color{slategray} Bilgisayar Mühendisliği Öğrencisi}
-    \end{center}
-    
-    \vspace{1ex}
-    
-    \leftsection{\faAddressCard\ İletişim}
-    \renewcommand{\arraystretch}{1.2}
-    \begin{tabular}{@{}c@{\hspace{1.2ex}}l@{}}
-        \textcolor{cyberblue}{\faMapMarker} & İstanbul \\
-        \textcolor{cyberblue}{\faEnvelope} & \href{mailto:sametgcl22@gmail.com}{sametgcl22@gmail.com} \\
-        \textcolor{cyberblue}{\faPhone} & \href{tel:05383652250}{0538 365 22 50} \\
-        \textcolor{cyberblue}{\faLinkedin} & \href{https://linkedin.com/in/samet-guclu-552639316/}{LinkedIn Profili} \\
-        \textcolor{cyberblue}{\faGithub} & \href{https://github.com/SmtGcl22}{SmtGcl22} \\
-    \end{tabular}
-    
-    \leftsection{\faCogs\ Teknik Yetenekler}
-    \textbf{\color{darkcyber}Siber Güvenlik \& Ağ:} \\
-    Kali Linux (Nmap, Wireshark, Burp Suite, Metasploit, Hydra), TCP/IP, Cisco Packet Tracer \\[1ex]
-    \textbf{\color{darkcyber}Programlama Dilleri:} \\
-    Python, C, C\#, Java, Dart, SQL \\[1ex]
-    \textbf{\color{darkcyber}Altyapı \& Geliştirme:} \\
-    Flutter, Firebase, Supabase, IoT (Arduino, ESP32) \\[1ex]
-    \textbf{\color{darkcyber}Geliştirme Araçları:} \\
-    Git, GitHub, VS Code, Visual Studio, Jupyter, MATLAB
-    
-    \leftsection{\faCertificate\ Sertifikalar}
-    \begin{itemize}
-        \setlength{\itemsep}{0.2ex}
-        \setlength{\parskip}{0pt}
-        \setlength{\parsep}{0pt}
-        \renewcommand{\labelitemi}{\cyberbullet}
-        \item \textbf{\color{cyberblue}Devam Eden:} Cisco CCNA
-        \item Google Cybersecurity Professional Certificate
-        \item Cisco: Network Technician Career Path
-        \item Cisco: Introduction to Cybersecurity
-        \item Cisco: Digital Safety \& Security
-        \item Cisco: Networking \& Industrial
-        \item Cisco: Introduction to IoT
-        \item Cisco: Introduction to Modern AI
-    \end{itemize}
-    
-    \leftsection{\faGlobe\ Diller}
-    \begin{itemize}
-        \setlength{\itemsep}{0pt}
-        \setlength{\parskip}{0pt}
-        \renewcommand{\labelitemi}{\cyberbullet}
-        \item İngilizce (B1--B2 / Intermediate)
-    \end{itemize}
+    \hspace{0.5cm}%
+    \begin{minipage}[t]{5.4cm}
+        \color{sidetext}
+        \raggedright
 
+        % ── Profil Fotoğrafı ──
+        \vspace{1ex}
+        \begin{center}
+            \begin{tikzpicture}
+                \clip (0,0) circle (2.2cm);
+                \node at (0,0) {\includegraphics[width=4.5cm, height=4.5cm]{profile.jpg}};
+            \end{tikzpicture}
+
+            \vspace{1.2ex}
+            {\LARGE \bfseries \color{white} Samet Güçlü} \\[0.5ex]
+            {\normalsize \color{sideaccent} Bilgisayar Mühendisliği Öğrencisi}
+        \end{center}
+
+        % ── İletişim ──
+        \sidesection{\faAddressCard}{İletişim}
+        \renewcommand{\arraystretch}{1.3}
+        \begin{tabular}{@{}c@{\hspace{1.2ex}}l@{}}
+            \textcolor{sideaccent}{\faMapMarker*} & İstanbul \\
+            \textcolor{sideaccent}{\faEnvelope} & \href{mailto:sametgcl22@gmail.com}{\color{sidetext}sametgcl22@gmail.com} \\
+            \textcolor{sideaccent}{\faPhone*} & \href{tel:05383652250}{\color{sidetext}0538 365 22 50} \\
+            \textcolor{sideaccent}{\faLinkedin} & \href{https://linkedin.com/in/samet-guclu-552639316/}{\color{sidetext}LinkedIn Profili} \\
+            \textcolor{sideaccent}{\faGithub} & \href{https://github.com/SmtGcl22}{\color{sidetext}SmtGcl22} \\
+        \end{tabular}
+
+        % ── Yetenekler ──
+        \sidesection{\faCogs}{Yetenekler}
+
+        \skillcat{\faCode\ \ Programlama}
+        Python, C, C\#, JavaScript, Dart, SQL
+
+        \skillcat{\faLayerGroup\ \ Framework \& Platform}
+        Flutter, Firebase, Supabase
+
+        \skillcat{\faTerminal\ \ Araçlar}
+        Git, GitHub, VS Code, Visual Studio, Jupyter, MATLAB
+
+        \skillcat{\faLock\ \ Ağ \& Güvenlik}
+        Kali Linux, Nmap, Wireshark, TCP/IP, Cisco Packet Tracer
+
+        % ── Sertifikalar ──
+        \sidesection{\faCertificate}{Sertifikalar}
+        \begin{itemize}[leftmargin=1.2em, itemsep=0.2ex, parsep=0pt, topsep=0pt, label={\textcolor{sideaccent}{\scriptsize\faCircle}}]
+            \item Google Cybersecurity Professional Certificate
+            \item Cisco: Network Technician Career Path
+            \item Cisco: Introduction to Cybersecurity
+            \item Cisco: Digital Safety \& Security
+            \item Cisco: Networking \& Industrial
+            \item Cisco: Introduction to IoT
+            \item Cisco: Introduction to Modern AI
+        \end{itemize}
+
+        % ── Diller ──
+        \sidesection{\faGlobe}{Diller}
+        \begin{tabular}{@{}l@{\hspace{2em}}l@{}}
+            \textcolor{white}{\textbf{Türkçe}} & Anadil \\
+            \textcolor{white}{\textbf{İngilizce}} & B1--B2 \\
+        \end{tabular}
+
+    \end{minipage}
 \end{minipage}%
-\hfill%
-\textcolor{dividergray}{\vrule width 1pt}%
-\hfill%
-\begin{minipage}[t]{0.64\textwidth}
+\begin{minipage}[t][\paperheight]{14.1cm}
     \vspace{0pt}
-    
-    \section*{\faUserSecret\ \ Profil Özeti}
-    Siber güvenlik alanında uzmanlaşmayı hedefleyen bir Bilgisayar Mühendisliği öğrencisiyim. Ağ teknolojileri, zafiyet analizi ve güvenlik araçları üzerine eğitimlerime devam etmekte ve sertifikasyon süreçlerimi sürdürmekteyim. Siber güvenlik bilincini projelerime entegre ederek yazılım ve mobil uygulama geliştirme alanlarında da deneyim kazandım. Güçlü analitik düşünme becerisine sahip, sorun çözme yeteneği yüksek ve gelişime açık bir mühendis adayıyım.
-    
-    \vspace{1ex}
-    
-    \section*{\faUserGraduate\ \ Eğitim}
-    \noindent
-    \textbf{\large \color{darkcyber} İstanbul Gedik Üniversitesi} \hfill \textbf{\color{cyberblue}2023 - Devam Ediyor} \\
-    \textit{\color{slategray}Bilgisayar Mühendisliği (Lisans)}
-    
-    \vspace{1.3ex}
-    \noindent
-    \textbf{\large \color{darkcyber} Pendik Anadolu Lisesi} \hfill \textbf{\color{cyberblue}2018 - 2021} \\
-    \textit{\color{slategray}Lise Eğitimi}
-    
-    \vspace{1ex}
-    
-    \section*{\faCode\ \ Projeler}
-    
-    \noindent
-    \textbf{\large \color{darkcyber} UpSec Scanner} \hfill {\color{slategray}\faLock\ Güvenlik Tarayıcı \small(Devam Ediyor)} \\
-    UpFinance web uygulaması için geliştirilen modüler siber güvenlik analiz aracı. \textit{Python, React ve Supabase mimarisine özel olarak HTTP başlıkları, yetkilendirme, SQLi, XSS, RLS ve JWT testlerini gerçekleştirir.}
-    
-    \vspace{1.3ex}
-    
-    \noindent
-    \textbf{\large \color{darkcyber} UpFinance} \hfill {\color{slategray}\faGlobe\ Web Uygulaması} \\
-    Beş kişilik bir ekip ile geliştirilen, Türkiye borsasına yönelik demo portföy yönetimi ve finansal analiz uygulaması. \textit{Kullanıcıların risksiz işlem pratiği yapmasına, analiz modüllerini ve finansal eğitim içeriklerini kullanmasına olanak sağlar.}
-    
-    \vspace{1.3ex}
-    
-    \noindent
-    \textbf{\large \color{darkcyber} EduNotice} \hfill {\color{slategray}\faMobile\ Flutter \& Firebase} \\
-    Eğitim kurumlarında iletişim ve bilgi akışını dijitalleştiren öğrenci bilgilendirme sistemi. \textit{Duyuru paylaşımı süreçlerini kurumsal bazda daha erişilebilir kılar.}
-    
-    \vspace{1.3ex}
-    
-    \noindent
-    \textbf{\large \color{darkcyber} PillDate} \hfill {\color{slategray}\faHeartbeat\ Mobil Uygulama} \\
-    Bulut tabanlı eşzamanlama sunan ilaç takip uygulaması. \textit{Kullanıcıların ilaç saatlerini takip etmesine yardımcı olarak tedaviye uyum oranını artırmayı hedefler.}
-    
-    \vspace{1.3ex}
-    
-    \noindent
-    \textbf{\large \color{darkcyber} IoT Keşif Araçları} \hfill {\color{slategray}\faMicrochip\ ESP32 \& Arduino} \\
-    Wi-Fi üzerinden canlı görüntü aktaran ESP32-CAM ve Bluetooth kontrollü HC-06 araç sistemleri. \textit{Gömülü sistemler ve haberleşme protokolleri odaklı test süreçleri.}
+    \hspace{0.6cm}%
+    \begin{minipage}[t]{12.6cm}
+        \color{maintext}
+        \raggedright
+        \setstretch{1.35}
 
+        \vspace{1ex}
+
+        % ── Profil ──
+        \mainsection{\faUser}{Profil}
+        Bilgisayar Mühendisliği öğrencisiyim. Ekip çalışmasına yatkın, sorumluluk sahibi ve çözüm odaklı bir yapıya sahibim. Hızlı öğrenme yeteneğim ve analitik düşünce yapım sayesinde dinamik çalışma ortamlarına kolaylıkla adapte olabiliyorum. Yazılım geliştirme ve teknoloji alanında kendimi sürekli geliştirmeyi hedefliyorum.
+
+        % ── Eğitim ──
+        \mainsection{\faUserGraduate}{Eğitim}
+
+        \textbf{\large \color{maintext} İstanbul Gedik Üniversitesi} \hfill \textbf{\color{accentblue}2023 -- Devam Ediyor} \\
+        \textit{\color{lightgray}Bilgisayar Mühendisliği (Lisans)}
+
+        \vspace{1.2ex}
+
+        \textbf{\large \color{maintext} Pendik Anadolu Lisesi} \hfill \textbf{\color{accentblue}2018 -- 2021} \\
+        \textit{\color{lightgray}Lise Eğitimi}
+
+        % ── Projeler ──
+        \mainsection{\faCode}{Projeler}
+
+        \textbf{\large \color{maintext} UpFinance} \hfill {\color{lightgray}\faGlobe\ Web Uygulaması} \\
+        {\color{accentblue}\textit{Fullstack Developer}} \\[0.3ex]
+        Beş kişilik bir ekip ile geliştirilen, Türkiye borsasına yönelik demo portföy yönetimi ve finansal analiz uygulaması. Kullanıcıların risksiz işlem pratiği yapmasına, analiz modüllerini ve finansal eğitim içeriklerini kullanmasına olanak sağlar.
+
+        \vspace{1.2ex}
+
+        \textbf{\large \color{maintext} EduNotice} \hfill {\color{lightgray}\faMobile*\ Flutter \& Firebase} \\
+        Eğitim kurumlarında iletişim ve bilgi akışını dijitalleştiren öğrenci bilgilendirme sistemi. Duyuru paylaşımı süreçlerini kurumsal bazda daha erişilebilir kılar.
+
+        \vspace{1.2ex}
+
+        \textbf{\large \color{maintext} PillDate} \hfill {\color{lightgray}\faHeartbeat\ Mobil Uygulama} \\
+        Bulut tabanlı eşzamanlama sunan ilaç takip uygulaması. Kullanıcıların ilaç saatlerini takip etmesine yardımcı olarak tedaviye uyum oranını artırmayı hedefler.
+
+        \vspace{1.2ex}
+
+        \textbf{\large \color{maintext} IoT Keşif Aracı} \hfill {\color{lightgray}\faMicrochip\ ESP32 \& Arduino} \\
+        ESP32-CAM ile Wi-Fi üzerinden canlı görüntü aktarımı yapan, L298 motor sürücü ve çeşitli sensörlerle donatılmış keşif aracı sistemi. Gömülü sistemler, motor kontrolü ve sensör entegrasyonu odaklı geliştirme süreçleri.
+
+    \end{minipage}
 \end{minipage}
 
 \end{document}
