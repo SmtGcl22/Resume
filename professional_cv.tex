@@ -52,11 +52,11 @@
 
 % ─── Sağ panel section komutu ───────────────────────────
 \newcommand{\mainsection}[2]{%
-    \vspace{1.6ex}%
+    \vspace{1.2ex}%
     {\Large\bfseries\color{accentblue} #1\ \ #2}\par%
-    \vspace{0.4ex}%
+    \vspace{0.3ex}%
     {\color{rulecolor}\rule{\linewidth}{1.5pt}}\par%
-    \vspace{1ex}%
+    \vspace{0.8ex}%
 }
 
 \begin{document}
@@ -80,12 +80,12 @@
         \begin{center}
             \begin{tikzpicture}
                 \clip (0,0) circle (2.2cm);
-                \node at (0,0) {\includegraphics[width=4.5cm, height=4.5cm]{profile.jpg}};
+                \node at (0.15,0.7) {\includegraphics[width=5.2cm, height=5.2cm]{cvprofile_cropped.jpg}};
             \end{tikzpicture}
 
             \vspace{1.2ex}
             {\LARGE \bfseries \color{white} Samet Güçlü} \\[0.5ex]
-            {\normalsize \color{sideaccent} Bilgisayar Mühendisliği Öğrencisi}
+            {\normalsize \color{sideaccent} Bilgisayar Mühendisliği 3. Sınıf Öğrencisi}
         \end{center}
 
         % ── İletişim ──
@@ -95,6 +95,7 @@
             \textcolor{sideaccent}{\faMapMarker*} & İstanbul \\
             \textcolor{sideaccent}{\faEnvelope} & \href{mailto:sametgcl22@gmail.com}{\color{sidetext}sametgcl22@gmail.com} \\
             \textcolor{sideaccent}{\faPhone*} & \href{tel:05383652250}{\color{sidetext}0538 365 22 50} \\
+            \textcolor{sideaccent}{\faGlobe} & \href{https://sametgüçlü.com.tr}{\color{sidetext}sametgüçlü.com.tr} \\
             \textcolor{sideaccent}{\faLinkedin} & \href{https://linkedin.com/in/samet-guclu-552639316/}{\color{sidetext}LinkedIn Profili} \\
             \textcolor{sideaccent}{\faGithub} & \href{https://github.com/SmtGcl22}{\color{sidetext}SmtGcl22} \\
         \end{tabular}
@@ -103,27 +104,24 @@
         \sidesection{\faCogs}{Yetenekler}
 
         \skillcat{\faCode\ \ Programlama}
-        Python, C, C\#, JavaScript, Dart, SQL
+        Python, C, C\#, JavaScript, TypeScript, Dart, SQL, HTML/CSS
 
         \skillcat{\faLayerGroup\ \ Framework \& Platform}
-        Flutter, Firebase, Supabase
+        React, Next.js, Flutter, Node.js, Firebase, Supabase
 
         \skillcat{\faTerminal\ \ Araçlar}
-        Git, GitHub, VS Code, Visual Studio, Jupyter, MATLAB
+        Git, GitHub, VS Code, Arduino IDE, Vercel, Linux
 
         \skillcat{\faLock\ \ Ağ \& Güvenlik}
-        Kali Linux, Nmap, Wireshark, TCP/IP, Cisco Packet Tracer
+        Kali Linux, Nmap, TCP/IP, Cisco Packet Tracer
 
         % ── Sertifikalar ──
         \sidesection{\faCertificate}{Sertifikalar}
         \begin{itemize}[leftmargin=1.2em, itemsep=0.2ex, parsep=0pt, topsep=0pt, label={\textcolor{sideaccent}{\scriptsize\faCircle}}]
             \item Google Cybersecurity Professional Certificate
+            \item Coderspace: Siber Güvenlik Okulu
             \item Cisco: Network Technician Career Path
             \item Cisco: Introduction to Cybersecurity
-            \item Cisco: Digital Safety \& Security
-            \item Cisco: Networking \& Industrial
-            \item Cisco: Introduction to IoT
-            \item Cisco: Introduction to Modern AI
         \end{itemize}
 
         % ── Diller ──
@@ -141,13 +139,13 @@
     \begin{minipage}[t]{12.6cm}
         \color{maintext}
         \raggedright
-        \setstretch{1.35}
+        \setstretch{1.25}
 
         \vspace{1ex}
 
         % ── Profil ──
         \mainsection{\faUser}{Profil}
-        Bilgisayar Mühendisliği öğrencisiyim. Ekip çalışmasına yatkın, sorumluluk sahibi ve çözüm odaklı bir yapıya sahibim. Hızlı öğrenme yeteneğim ve analitik düşünce yapım sayesinde dinamik çalışma ortamlarına kolaylıkla adapte olabiliyorum. Yazılım geliştirme ve teknoloji alanında kendimi sürekli geliştirmeyi hedefliyorum.
+        Bilgisayar Mühendisliği 3. sınıf öğrencisiyim. Ekip çalışmasına yatkın, sorumluluk sahibi ve çözüm odaklı bir yapıya sahibim. Hızlı öğrenme yeteneğim ve analitik düşünce yapım sayesinde dinamik çalışma ortamlarına kolaylıkla adapte olabiliyorum. Yazılım geliştirme ve teknoloji alanında kendimi sürekli geliştirmeyi hedefliyorum.
 
         % ── Eğitim ──
         \mainsection{\faUserGraduate}{Eğitim}
@@ -155,32 +153,61 @@
         \textbf{\large \color{maintext} İstanbul Gedik Üniversitesi} \hfill \textbf{\color{accentblue}2023 -- Devam Ediyor} \\
         \textit{\color{lightgray}Bilgisayar Mühendisliği (Lisans)}
 
-        \vspace{1.2ex}
+        \vspace{0.8ex}
 
         \textbf{\large \color{maintext} Pendik Anadolu Lisesi} \hfill \textbf{\color{accentblue}2018 -- 2021} \\
         \textit{\color{lightgray}Lise Eğitimi}
 
+
+
         % ── Projeler ──
         \mainsection{\faCode}{Projeler}
 
-        \textbf{\large \color{maintext} UpFinance} \hfill {\color{lightgray}\faGlobe\ Web Uygulaması} \\
-        {\color{accentblue}\textit{Fullstack Developer}} \\[0.3ex]
-        Beş kişilik bir ekip ile geliştirilen, Türkiye borsasına yönelik demo portföy yönetimi ve finansal analiz uygulaması. Kullanıcıların risksiz işlem pratiği yapmasına, analiz modüllerini ve finansal eğitim içeriklerini kullanmasına olanak sağlar.
+        \textbf{\large \color{maintext} Nexus Tactical} \hfill {\color{lightgray}\faMicrochip\ ESP32 \& Arduino} \\
+        {\color{accentblue}\textit{Gömülü Sistem Geliştirici}}
+        \begin{itemize}[leftmargin=1.2em, itemsep=0.1ex, parsep=0pt, topsep=0.3ex, label={\textcolor{accentblue}{\scriptsize\faAngleRight}}]
+            \item ESP32-CAM ile Wi-Fi üzerinden MJPEG canlı video akışı gerçekleştirme
+            \item ESP-NOW protokolü ile düşük gecikmeli kablosuz motor kontrolü
+            \item Mecanum tekerlek sistemi ile çok yönlü hareket kabiliyeti
+            \item OpenCV tabanlı otonom renk takip algoritması geliştirme
+            \item Pan-Tilt servo mekanizması ile uzaktan kamera yönlendirme
+            \item HTML/JS tabanlı web arayüzü üzerinden tam kontrol
+        \end{itemize}
 
-        \vspace{1.2ex}
+        \vspace{0.8ex}
+
+        \textbf{\large \color{maintext} UpFinance} \hfill {\color{lightgray}\faGlobe\ Web Uygulaması} \\
+        {\color{accentblue}\textit{Fullstack Developer}}
+        \begin{itemize}[leftmargin=1.2em, itemsep=0.1ex, parsep=0pt, topsep=0.3ex, label={\textcolor{accentblue}{\scriptsize\faAngleRight}}]
+            \item Supabase + Vanilla JS ile gerçek zamanlı portföy yönetim sistemi
+            \item 5 kişilik Scrum takımında aktif geliştirici rolü
+            \item Slot-bazlı işlem motoru ve canlı fiyat senkronizasyonu
+            \item Vercel üzerinde production deployment yönetimi
+        \end{itemize}
+
+        \vspace{0.8ex}
 
         \textbf{\large \color{maintext} EduNotice} \hfill {\color{lightgray}\faMobile*\ Flutter \& Firebase} \\
-        Eğitim kurumlarında iletişim ve bilgi akışını dijitalleştiren öğrenci bilgilendirme sistemi. Duyuru paylaşımı süreçlerini kurumsal bazda daha erişilebilir kılar.
+        \begin{itemize}[leftmargin=1.2em, itemsep=0.1ex, parsep=0pt, topsep=0.3ex, label={\textcolor{accentblue}{\scriptsize\faAngleRight}}]
+            \item Eğitim kurumlarında dijital duyuru ve bilgilendirme sistemi
+            \item Firebase ile bulut tabanlı anlık bildirim altyapısı
+        \end{itemize}
 
-        \vspace{1.2ex}
+        \vspace{0.8ex}
 
         \textbf{\large \color{maintext} PillDate} \hfill {\color{lightgray}\faHeartbeat\ Mobil Uygulama} \\
-        Bulut tabanlı eşzamanlama sunan ilaç takip uygulaması. Kullanıcıların ilaç saatlerini takip etmesine yardımcı olarak tedaviye uyum oranını artırmayı hedefler.
+        \begin{itemize}[leftmargin=1.2em, itemsep=0.1ex, parsep=0pt, topsep=0.3ex, label={\textcolor{accentblue}{\scriptsize\faAngleRight}}]
+            \item Bulut tabanlı eşzamanlı ilaç takip uygulaması
+            \item Çoklu cihaz senkronizasyonu ile tedavi uyum takibi
+        \end{itemize}
 
-        \vspace{1.2ex}
+        % ── Referanslar ──
+        \mainsection{\faUserTie}{Referanslar}
 
-        \textbf{\large \color{maintext} IoT Keşif Aracı} \hfill {\color{lightgray}\faMicrochip\ ESP32 \& Arduino} \\
-        ESP32-CAM ile Wi-Fi üzerinden canlı görüntü aktarımı yapan, L298 motor sürücü ve çeşitli sensörlerle donatılmış keşif aracı sistemi. Gömülü sistemler, motor kontrolü ve sensör entegrasyonu odaklı geliştirme süreçleri.
+        {\fontsize{12}{14}\selectfont\bfseries \color{maintext} Oğuz ÖNAL} \\[0.3ex]
+        {\fontsize{11}{13}\selectfont\bfseries\color{accentblue} İNTERTECH} {\fontsize{11}{13}\selectfont\color{lightgray}--} {\fontsize{11}{13}\selectfont\color{accentblue}\textit{CRM, Kıdemli Yazılım Mühendisi}} \\[0.3ex]
+        {\normalsize\textcolor{accentblue}{\faPhone*}\ \ \href{tel:05312699954}{\color{maintext}0531 269 99 54}} \\
+        {\normalsize\textcolor{accentblue}{\faEnvelope}\ \ \href{mailto:oguz.onal@intertech.com.tr}{\color{maintext}oguz.onal@intertech.com.tr}}
 
     \end{minipage}
 \end{minipage}
